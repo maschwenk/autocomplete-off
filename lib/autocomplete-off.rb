@@ -14,6 +14,7 @@ module ActionView
       #
       # Fields can use the browsers autocomplete by explicitly setting ":autocomplete => 'on'"
       def tag(name, options = nil, open = false, escape = true)
+        raise 'Is this real life?'
         options['autocomplete'] ||= 'off' if options.is_a?(Hash) and name.to_s == 'input' and not ['submit', 'reset', 'radio', 'image', 'file', 'hidden', 'checkbox'].include?(options['type'].to_s)
         tag_without_autocomplete_off(name, options, open, escape)
       end
